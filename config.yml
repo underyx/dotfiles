@@ -4,6 +4,10 @@
 
 - clean: ['~']
 
+- shell:
+  - [mkdir -p ~/bin]
+  - [mkdir -p ~/.config]
+
 # zsh
 - shell:
   - [mkdir -p ~/.zshlocal/pre]
@@ -18,27 +22,20 @@
     ~/.zsh: zsh
 
 # vim & nvim
-- shell:
-  - [mkdir -p ~/.config/nvim]
+- link:
+    ~/.vim: vim
+    ~/.config/nvim: vim
 
 - link:
     ~/.vimrc: vimrc
     ~/.config/nvim/init.vim: vimrc
 
 - shell:
-  - ['{type -p vim && vim +PluginInstall +qall} || true']
-  - ['{type -p nvim && nvim +PluginInstall +qall} || true']
+    - ['{type -p vim && vim +PluginInstall +qall} || {type -p nvim && nvim +PluginInstall +qall} || true']
 
 # git
-- shell:
-  - [mkdir -p ~/bin]
-
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitignore.global: gitignore.global
     ~/.git-templates: git-templates
     ~/bin/git-review-pr: bin/git-review-pr
-
-# dotbot update
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]

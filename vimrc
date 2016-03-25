@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
@@ -69,7 +69,7 @@ filetype plugin indent on
 augroup vimrc
   " For all text files set 'textwidth' to 79 characters.
   autocmd FileType text setlocal textwidth=79
-  
+
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid
   autocmd BufReadPost *
@@ -128,4 +128,3 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
