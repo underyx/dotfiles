@@ -5,15 +5,15 @@
 - clean: ['~']
 
 - shell:
-  - [mkdir -p ~/bin]
-  - [mkdir -p ~/.config]
+  - mkdir -p ~/bin
+  - mkdir -p ~/.config
 
 # zsh
 - shell:
-  - [mkdir -p ~/.zshlocal/pre]
-  - [mkdir -p ~/.zshlocal/post]
-  - [touch ~/.zshlocal/secrets]
-  - [chmod 600 ~/.zshlocal/secrets]
+  - mkdir -p ~/.zshlocal/pre
+  - mkdir -p ~/.zshlocal/post
+  - touch ~/.zshlocal/secrets
+  - chmod 600 ~/.zshlocal/secrets
 
 - link:
     ~/.zshrc:
@@ -31,7 +31,7 @@
     ~/.config/nvim/init.vim: vimrc
 
 - shell:
-    - ['{type -p vim && vim +PluginInstall +qall} || {type -p nvim && nvim +PluginInstall +qall} || true']
+    - '{type -p vim && vim +PluginInstall +qall} || {type -p nvim && nvim +PluginInstall +qall} || true'
 
 # git
 - link:
