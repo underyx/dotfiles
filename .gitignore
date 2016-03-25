@@ -1,2 +1,4 @@
 vim/init.vim
 vim/bundle/*
+vim/.netrwhist
+

@@ -13,7 +13,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/gundo.vim'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
 filetype plugin indent on
