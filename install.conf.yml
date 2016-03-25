@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: zshrc
+    ~/.zsh: zsh
+
+- shell:
+  - [mkdir -p ~/.zshlocal]
+  - [touch ~/.zshsecrets]
+  - [chmod 600 ~/.zshsecrets]
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+

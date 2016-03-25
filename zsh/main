@@ -1,0 +1,21 @@
+source $ZSHHOME/zsh-settings
+source $ZSHHOME/functions
+source $ZSHHOME/environment
+source $HOME/.zshsecrets
+source $ZSHHOME/aliases
+
+if exists fasd; then
+  source $ZSHHOME/fasd
+fi
+
+if exists docker-machine; then
+  source $ZSHHOME/docker-machine
+fi
+
+if [[ -e ${HOME}/.iterm2_shell_integration.zsh ]]; then
+  source ${HOME}/.iterm2_shell_integration.zsh
+fi
+
+for file in $HOME/.zshlocal/*; do
+  source $file
+done
