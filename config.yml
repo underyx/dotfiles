@@ -22,6 +22,9 @@
     ~/.zsh: zsh
 
 # vim & nvim
+- shell:
+    - mkdir -p ~/.vimtmp
+
 - link:
     ~/.vim: vim
     ~/.config/nvim: vim

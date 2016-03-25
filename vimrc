@@ -43,9 +43,9 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 
-set directory=~/.vim/tmp,. " keep swap files in this directory
-set backupdir=~/.vim/tmp,. " keep backups in this directory
-set undodir=~/.vim/tmp,.   " keep undo files in this directory
+set directory=~/.vimtmp,. " keep swap files in this directory
+set backupdir=~/.vimtmp,. " keep backups in this directory
+set undodir=~/.vimtmp,.   " keep undo files in this directory
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
