@@ -31,8 +31,7 @@
     ~/.config/nvim/init.vim: vimrc
 
 - shell:
-    - ['{type -p vim && vim +PluginInstall +qall} || true']
-    - ['{type -p nvim && nvim +PluginInstall +qall} || true']
+    - ['{type -p vim && vim +PluginInstall +qall} || {type -p nvim && nvim +PluginInstall +qall} || true']
 
 # git
 - link:
