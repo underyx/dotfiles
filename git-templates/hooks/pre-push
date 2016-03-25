@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+if type -p tox > /dev/null && [ -e tox.ini ]; then
+  tox
+else
+  echo "tox or tox.ini not found, skipping tox..."
+fi
+

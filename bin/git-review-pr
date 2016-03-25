@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+alias git="hub"
+git checkout master
+git am -3 "`git browse -u`/pull/$1"
+

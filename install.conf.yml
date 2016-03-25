@@ -10,6 +10,12 @@
       force: yes
     ~/.zsh: zsh
 
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.gitignore.global: gitignore.global
+    ~/.git-templates: git-templates
+    ~/bin/git-review-pr: bin/git-review-pr
+
 - shell:
   - [mkdir -p ~/.zshlocal/pre]
   - [mkdir -p ~/.zshlocal/post]
