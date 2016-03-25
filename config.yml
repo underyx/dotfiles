@@ -42,3 +42,7 @@
     ~/.gitignore.global: gitignore.global
     ~/.git-templates: git-templates
     ~/bin/git-review-pr: bin/git-review-pr
+
+- link:
+    ~/.tmux.conf: tmux.conf
+
