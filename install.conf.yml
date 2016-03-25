@@ -9,9 +9,10 @@
     ~/.zsh: zsh
 
 - shell:
-  - [mkdir -p ~/.zshlocal]
-  - [touch ~/.zshsecrets]
-  - [chmod 600 ~/.zshsecrets]
+  - [mkdir -p ~/.zshlocal/pre]
+  - [mkdir -p ~/.zshlocal/post]
+  - [touch ~/.zshlocal/secrets]
+  - [chmod 600 ~/.zshlocal/secrets]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

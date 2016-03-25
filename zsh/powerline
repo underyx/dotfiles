@@ -1,0 +1,3 @@
+powerline-daemon -q
+source $POWERLINE_BASE_DIR/powerline/bindings/zsh/powerline.zsh
+
