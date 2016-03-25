@@ -18,7 +18,7 @@ Plugin 'wakatime/vim-wakatime'
 call vundle#end()
 filetype plugin indent on
 
-colorscheme base16-chalk
+silent! colorscheme base16-chalk
 set background=dark
 syntax on
 
