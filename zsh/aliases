@@ -1,6 +1,6 @@
 alias l="ls -AltrhG"
 
-alias zshrc="$EDITOR ~/.zshrc"
+alias zshrc="$EDITOR ~/.zsh"
 alias vimrc="$EDITOR ~/.vimrc"
 alias nvimrc="$EDITOR ~/.config/nvim/init.vim"
 
