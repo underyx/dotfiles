@@ -17,6 +17,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
 
+" silent! ignores errors, which is needed to not fail when first installing base16
 silent! colorscheme base16-chalk
 set background=dark
 syntax on
