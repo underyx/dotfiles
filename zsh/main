@@ -12,10 +12,6 @@ if exists fasd; then
   source $ZSHHOME/fasd
 fi
 
-if exists docker-machine; then
-  source $ZSHHOME/docker-machine
-fi
-
 if [ -n "$POWERLINE_BASE_DIR" ]; then
   source $ZSHHOME/powerline
 fi

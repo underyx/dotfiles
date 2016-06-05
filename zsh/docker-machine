@@ -1,8 +1,0 @@
-docker_cache="$HOME/.docker-init-zsh"
-
-if [ ! -s "$docker_cache" ]; then
-  docker-machine env >| "$docker_cache"
-fi
-
-source "$docker_cache"
-unset docker_cache
