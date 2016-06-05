@@ -26,6 +26,7 @@ unsetopt nomatch
 bindkey -v
 
 bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^?' backward-delete-char
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
