@@ -28,4 +28,4 @@ release:
    - docker pull registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME
    - docker tag registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME registry.gitlab.com/underyx/dotfiles:latest
    - docker push registry.gitlab.com/underyx/dotfiles:latest
-  
+
