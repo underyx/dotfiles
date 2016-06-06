@@ -18,6 +18,8 @@ use_spaces = yes
 cs_keywords = FIXME
 ci_keywords = 
 max_line_length = 120
+default_actions =
+  SpaceConsistencyBear: ShowPatchAction
 
 [yaml]
 bears = YAMLLintBear
@@ -28,4 +30,6 @@ yamllint_config = .yaml-lint
 [markdown]
 bears = MarkdownBear
 files = **.md
+default_actions =
+  MarkdownBear: ShowPatchAction
 
