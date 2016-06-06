@@ -1,14 +1,31 @@
-static_analysis:
+stages:
+ - build
+ - release
+
+static-analysis:
+  stage: build
   image: coala/base
   script:
-   - coala
+   - coala-ci
 
-build_image:
+build:
+  stage: build
   image: docker
   services:
    - docker:dind
   script:
    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-   - docker build -t registry.gitlab.com/underyx/dotfiles:latest .
-   - docker push registry.gitlab.com/underyx/dotfiles:latest
+   - docker build -t registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME .
+   - docker push registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME
 
+release:
+  stage: release
+  image: docker
+  services:
+   - docker:dind
+  script:
+   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+   - docker pull registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME
+   - docker tag registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME registry.gitlab.com/underyx/dotfiles:latest
+   - docker push registry.gitlab.com/underyx/dotfiles:latest
+  
