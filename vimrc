@@ -13,30 +13,31 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/gundo.vim'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/argtextobj.vim'
 
 call vundle#end()
 filetype plugin indent on
 
-" silent! ignores errors, which is needed to not fail when first installing base16
+" silent! ignores errors; needed to not fail when first installing base16
 silent! colorscheme base16-chalk
 set background=dark
 syntax on
 
-set hlsearch		" switch on highlighting of the last used search pattern
-set laststatus=2	" always display the status line (from powerline)
-set showtabline=2	" always display tabs (even when there's just one)
-set noshowmode		" disable e.g. '--insert--' at the bottom since
-			" powerline makes that redundant
-set backspace=indent,eol,start	" allow backspacing over stuff in insert mode
-set backup		" keep a backup file (restore to previous version)
-set undofile		" keep an undo file (undo changes after closing)
-set mouse=a		" enable mouse control
-set history=50 		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+set hlsearch        " switch on highlighting of the last used search pattern
+set laststatus=2    " always display the status line (from powerline)
+set showtabline=2   " always display tabs (even when there's just one)
+set noshowmode      " disable e.g. '--insert--' at the bottom since
+            " powerline makes that redundant
+set backspace=indent,eol,start  " allow backspacing over stuff in insert mode
+set backup      " keep a backup file (restore to previous version)
+set undofile        " keep an undo file (undo changes after closing)
+set mouse=a     " enable mouse control
+set history=50      " keep 50 lines of command line history
+set ruler       " show the cursor position all the time
 set number              " show line numbers
 set cursorline          " highlight current line
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set showcmd     " display incomplete commands
+set incsearch       " do incremental searching
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to.
 set foldenable          " enable folding
@@ -104,9 +105,9 @@ augroup END
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-	       \ | wincmd p | diffthis
+           \ | wincmd p | diffthis
 
-let g:airline_powerline_fonts = 1  " Use powerline patched fonts with vim-airline
+let g:airline_powerline_fonts = 1  " Use powerline patched fonts in status bar
 let g:airline#extensions#tabline#enabled = 1
 
 nnoremap <leader>u :GundoToggle<CR>
@@ -125,7 +126,7 @@ function! <SID>StripTrailingWhitespaces()
     let _s=@/
     let l = line(".")
     let c = col(".")
-    %s/\s\+$//e
+    %s:\s\+$::e
     let @/=_s
     call cursor(l, c)
 endfunction

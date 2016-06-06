@@ -1,24 +1,24 @@
 [core]
-        excludesfile = ~/.gitignore.global
-        whitespace = space-before-tab,trailing-space
+    excludesfile = ~/.gitignore.global
+    whitespace = space-before-tab,trailing-space
 [user]
-        name = Bence Nagy
-        email = bence@underyx.me
+    name = Bence Nagy
+    email = bence@underyx.me
 
 [push]
-        default = current
+    default = current
 
 [alias]
-        pull = pull --rebase
-        force = push --force-with-lease
-        unstage = reset HEAD --
-        add-s = !zsh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
-        review = !git-review-pr
-        amend-force = !zsh -c 'git add . && git commit --amend --no-edit && git force'
+    pull = pull --rebase
+    force = push --force-with-lease
+    unstage = reset HEAD --
+    add-s = !zsh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
+    review = !git-review-pr
+    amend-force = !zsh -c 'git add . && git commit --amend --no-edit && git force'
 
 [help]
-        autocorrect = 5
+    autocorrect = 5
 
 [init]
-        templatedir = ~/.git-templates
+    templatedir = ~/.git-templates
 

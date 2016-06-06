@@ -1,0 +1,9 @@
+dependencies:
+  override:
+    - pip3 install coala-bears
+    - npm install --global remark remark-lint
+
+test:
+  override:
+    - coala-ci
+

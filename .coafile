@@ -1,0 +1,31 @@
+[Default]
+bears =
+  SpaceConsistencyBear,
+  LineLengthBear,
+  InvalidLinkBear,
+  KeywordBear,
+  GitCommitBear,
+files = **
+ignore =
+  vim/bundle/**,
+  dotbot/**,
+  zsh/completions/**,
+  .git/**,
+  env/**,
+  **~,
+  .coafile,
+use_spaces = yes
+cs_keywords = FIXME
+ci_keywords = 
+max_line_length = 120
+
+[yaml]
+bears = YAMLLintBear
+files =
+  **.yml,
+yamllint_config = .yaml-lint
+
+[markdown]
+bears = MarkdownBear
+files = **.md
+

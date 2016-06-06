@@ -1,0 +1,23 @@
+image: python:3.5
+
+cache:
+  paths:
+  - .tox
+
+before_script:
+  - pip install tox==2.3.1
+
+static_analysis:
+  image: coala/base
+  script:
+   - coala
+
+build_image:
+  image: docker
+  services:
+   - docker:dind
+  script:
+   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+   - docker build -t registry.gitlab.com/underyx/dotfiles:latest .
+   - docker push registry.gitlab.com/underyx/dotfiles:latest
+
