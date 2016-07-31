@@ -1,4 +1,7 @@
-env
+env/
 .DS_Store
 *~
+*.orig
+*.ipynb
+.ipynb_checkpoints/
 
