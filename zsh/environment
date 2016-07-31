@@ -2,11 +2,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GOPATH="$HOME/go"
-export PATH="$HOME/bin:$GOPATH/bin:$PATH"
+export PATH="$HOME/bin:$GOPATH/bin:/usr/local/m-cli:$PATH"
 
 if exists nvim; then
   export EDITOR=$(command -v nvim)
 elif exists vim; then
   export EDITOR=$(command -v nvim)
 fi
+
 export VISUAL="$EDITOR"
