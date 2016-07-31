@@ -8,6 +8,9 @@
 [push]
     default = current
 
+[diff]
+    compactionHeuristic = true
+
 [alias]
     pull = pull --rebase
     force = push --force-with-lease
