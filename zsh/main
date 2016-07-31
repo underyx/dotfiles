@@ -20,6 +20,10 @@ if [[ -e ${HOME}/.iterm2_shell_integration.zsh ]]; then
   source ${HOME}/.iterm2_shell_integration.zsh
 fi
 
+if exists brew; then
+  source $ZSHHOME/dvm
+fi
+
 for file in $HOME/.zshlocal/post/*(.N); do
   source $file
 done
