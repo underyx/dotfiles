@@ -13,11 +13,12 @@
 
 [alias]
     pull = pull --rebase
+    amend = !zsh -c 'git add . && git commit --amend --no-edit'
     force = push --force-with-lease
     unstage = reset HEAD --
     add-s = !zsh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
     review = !git-review-pr
-    amend-force = !zsh -c 'git add . && git commit --amend --no-edit && git force'
+    af = !zsh -c 'git amend && git force'
 
 [help]
     autocorrect = 5
