@@ -24,6 +24,10 @@ if exists brew; then
   source $ZSHHOME/dvm
 fi
 
+if exists gpg-agent; then
+  source $ZSHHOME/gpg
+fi
+
 for file in $HOME/.zshlocal/post/*(.N); do
   source $file
 done

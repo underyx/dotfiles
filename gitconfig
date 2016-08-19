@@ -1,9 +1,11 @@
 [core]
     excludesfile = ~/.gitignore.global
     whitespace = space-before-tab,trailing-space
+
 [user]
     name = Bence Nagy
     email = bence@underyx.me
+    signingkey = B35D2590
 
 [push]
     default = current
@@ -26,3 +28,5 @@
 [init]
     templatedir = ~/.git-templates
 
+[commit]
+    gpgsign = true
