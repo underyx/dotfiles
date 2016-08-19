@@ -15,7 +15,7 @@
 
 [alias]
     pull = pull --rebase
-    amend = !zsh -c 'git add . && git commit --amend --no-edit'
+    amend = commit --amend --no-edit
     force = push --force-with-lease
     unstage = reset HEAD --
     add-s = !zsh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
