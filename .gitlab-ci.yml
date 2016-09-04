@@ -4,13 +4,13 @@ stages:
 
 static-analysis:
   stage: build
-  image: coala/base
+  image: coala/base:0.8
   script:
    - coala-ci
 
 build:
   stage: build
-  image: docker
+  image: docker:1.12
   services:
    - docker:dind
   script:
@@ -20,7 +20,7 @@ build:
 
 release:
   stage: release
-  image: docker
+  image: docker:1.12
   services:
    - docker:dind
   script:
