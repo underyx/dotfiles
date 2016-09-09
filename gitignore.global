@@ -4,4 +4,4 @@ env/
 *.orig
 *.ipynb
 .ipynb_checkpoints/
-
+.ansible-vault-password
