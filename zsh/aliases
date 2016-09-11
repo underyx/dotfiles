@@ -1,14 +1,16 @@
+if exists hub; then
+  alias git=hub
+fi
+
+alias 8="ping 8.8.8.8"
+alias g="git"
 alias l="ls -AltrhG"
 
 alias zshrc="$EDITOR ~/.zsh"
 alias vimrc="$EDITOR ~/.vimrc"
 alias nvimrc="$EDITOR ~/.config/nvim/init.vim"
 
-alias release="python setup.py bdist_wheel --universal upload --sign"
+alias release="python setup.py bdist_wheel --universal upload --sign && python setup.py sdist upload --sign"
 alias venv="source env/bin/activate"
 alias mgmt="ssh -t mgmt sudo ssh"
-alias 8="ping 8.8.8.8"
 
-if exists hub; then
-  alias git=hub
-fi
