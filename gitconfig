@@ -21,6 +21,26 @@
     add-s = !zsh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
     review = !git-review-pr
     af = !zsh -c 'git amend && git force'
+    a = add
+    ap = add --patch
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    ch = checkout
+    chb = checkout -b
+    d = diff
+    dc = diff --cached
+    f = fetch
+    l = log
+    lo = log --oneline
+    s = status
+    sh = show
+    rh = reset HEAD
+    ri = rebase --interactive
+    rc = rebase --continue
+    pop = stash pop
+    drop = stash drop
 
 [help]
     autocorrect = 5
