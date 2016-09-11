@@ -1,22 +1,18 @@
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
 
-" plugins to install go here
-Plugin 'chriskempson/base16-vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'sjl/gundo.vim'
-Plugin 'rking/ag.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-scripts/argtextobj.vim'
-
-call vundle#end()
-filetype plugin indent on
+set rtp+=~/.vim/vim-plug/plug.vim
+set rtp+=~/.config/nvim/vim-plug/plug.vim
+call plug#begin()
+Plug 'chriskempson/base16-vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'sjl/gundo.vim'
+Plug 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'scrooloose/nerdtree'
+call plug#end()
 
 " silent! ignores errors; needed to not fail when first installing base16
 silent! colorscheme base16-chalk

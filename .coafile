@@ -7,13 +7,14 @@ bears =
   GitCommitBear,
 files = **
 ignore =
-  vim/bundle/**,
+  vim/plugged/**,
   dotbot/**,
   zsh/completions/**,
   .git/**,
   env/**,
   **~,
   .coafile,
+  .gitmodules,
 use_spaces = yes
 cs_keywords = FIXME
 ci_keywords = 

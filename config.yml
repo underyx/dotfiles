@@ -36,7 +36,7 @@
     ~/.config/nvim/init.vim: vimrc
 
 - shell:
-    - zsh -c '{type -p vim && vim +PluginInstall +qall} || {type -p nvim && nvim +PluginInstall +qall} || true'
+    - zsh -c '{type -p vim && vim +PlugInstall +qall}; {type -p nvim && nvim +PlugInstall +qall} || true'
 
 # git
 - link:
