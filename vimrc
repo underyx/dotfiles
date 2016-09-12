@@ -1,8 +1,5 @@
 set nocompatible
 
-
-set rtp+=~/.vim/vim-plug/plug.vim
-set rtp+=~/.config/nvim/vim-plug/plug.vim
 call plug#begin()
 Plug 'chriskempson/base16-vim'
 Plug 'bling/vim-airline'
