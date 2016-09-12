@@ -1,5 +1,8 @@
 # dotfiles [![build status][build status badge]][build status]
 
+Got only 5 seconds to spend on this? Try my dotfiles out with
+`docker run -ti registry.gitlab.com/underyx/dotfiles`!
+
 ## Installation
 
 1. Install `git`, `zsh`, `python`, and the `en_US.UTF-8` locale
