@@ -28,6 +28,8 @@ if exists gpg-agent; then
   source $ZSHHOME/gpg
 fi
 
+source $ZSHHOME/autoenv/activate.sh
+
 for file in $HOME/.zshlocal/post/*(.N); do
   source $file
 done

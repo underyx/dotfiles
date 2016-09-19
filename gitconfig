@@ -20,7 +20,6 @@
     unstage = reset HEAD --
     add-s = !zsh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
     review = !git-review-pr
-    af = !zsh -c 'git amend && git force'
     a = add
     ap = add --patch
     c = commit
@@ -32,15 +31,21 @@
     d = diff
     dc = diff --cached
     f = fetch
+    fo = fetch origin
     l = log
     lo = log --oneline
+    p = pull
     s = status
     sh = show
+    r = rebase
+    rom = rebase origin/master
     rh = reset HEAD
     ri = rebase --interactive
     rc = rebase --continue
     pop = stash pop
     drop = stash drop
+    af = !zsh -c 'git amend && git force'
+    forom = !zsh -c 'git fo && git rom'
 
 [help]
     autocorrect = 5
