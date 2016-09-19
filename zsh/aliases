@@ -14,3 +14,5 @@ alias release="python setup.py bdist_wheel --universal upload --sign && python s
 alias venv="source env/bin/activate"
 alias mgmt="ssh -t mgmt sudo ssh"
 
+alias pip-up="pip-compile --upgrade"
+alias pip-push-up="git checkout master && git branch -D bence/pip-up || git checkout -b bence/pip-up && pip-up && git add requirements.txt && git commit -m 'Update requirements' && git push"
