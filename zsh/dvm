@@ -1,1 +1,1 @@
-[[ -s "$(brew --prefix dvm)/dvm.sh" ]] && source "$(brew --prefix dvm)/dvm.sh"
+[[ -s "/usr/local/opt/dvm/dvm.sh" ]] && source "/usr/local/opt/dvm/dvm.sh"
