@@ -9,6 +9,7 @@ Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 " silent! ignores errors; needed to not fail when first installing base16
