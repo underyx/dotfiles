@@ -1,3 +1,11 @@
 exists() {
   type -p $1 > /dev/null
 }
+
+mgmt() {
+  if [[ -z $1 ]]; then
+    ssh -t mgmt tmux attach -t $(whoami)
+    exit 0
+  fi
+  ssh -t mgmt tmux new-session -t $(whoami)\\\; new-window -t $(whoami)\\\; new-window -n $1 \"sudo ssh $1\"
+}
