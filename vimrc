@@ -1,16 +1,15 @@
 set nocompatible
 
 call plug#begin()
-Plug 'chriskempson/base16-vim'
-Plug 'bling/vim-airline'
-Plug 'tpope/vim-fugitive'
+Plug 'chriskempson/base16-vim'  " color scheme for base16 colored terminals
+Plug 'bling/vim-airline'  " fancy status bar
 Plug 'sjl/gundo.vim'
-Plug 'rking/ag.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'  " the silver searcher, for quickly searching code in project
+Plug 'ctrlpvim/ctrlp.vim'  " quick switching to other files
 Plug 'vim-scripts/argtextobj.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'wakatime/vim-wakatime'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'  " relative line numbers in normal mode
+Plug 'wakatime/vim-wakatime'  " automatic time tracking
+Plug 'vim-scripts/indentpython.vim'  " better indentation for Python code
 call plug#end()
 
 " silent! ignores errors; needed to not fail when first installing base16
@@ -39,6 +38,7 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
+set encoding=utf-8
 
 set directory=~/.vimtmp,. " keep swap files in this directory
 set backupdir=~/.vimtmp,. " keep backups in this directory
@@ -73,28 +73,34 @@ augroup vimrc
     \ if line("'\"") >= 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
-    autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                \:call <SID>StripTrailingWhitespaces()
-    autocmd FileType java setlocal noexpandtab
-    autocmd FileType java setlocal list
-    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
-    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
-    autocmd FileType php setlocal expandtab
-    autocmd FileType php setlocal list
-    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
-    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
-    autocmd FileType ruby setlocal tabstop=2
-    autocmd FileType ruby setlocal shiftwidth=2
-    autocmd FileType ruby setlocal softtabstop=2
-    autocmd FileType ruby setlocal commentstring=#\ %s
-    autocmd FileType python setlocal commentstring=#\ %s
-    autocmd BufEnter *.cls setlocal filetype=java
-    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
-    autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufEnter *.sh setlocal tabstop=2
-    autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufEnter *.sh setlocal softtabstop=2
+  autocmd VimEnter * highlight clear SignColumn
+  autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+                      \:call <SID>StripTrailingWhitespaces()
+  autocmd FileType java setlocal noexpandtab
+  autocmd FileType java setlocal list
+  autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+  autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+  autocmd FileType php setlocal expandtab
+  autocmd FileType php setlocal list
+  autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+  autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+  autocmd FileType ruby setlocal tabstop=2
+  autocmd FileType ruby setlocal shiftwidth=2
+  autocmd FileType ruby setlocal softtabstop=2
+  autocmd FileType ruby setlocal commentstring=#\ %s
+  autocmd FileType python setlocal commentstring=#\ %s
+  autocmd FileType python setlocal tabstop=4
+  autocmd FileType python setlocal softtabstop=4
+  autocmd FileType python setlocal shiftwidth=4
+  autocmd FileType python setlocal textwidth=79
+  autocmd FileType python setlocal autoindent
+  autocmd FileType python setlocal fileformat=unix
+  autocmd BufEnter *.cls setlocal filetype=java
+  autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+  autocmd BufEnter Makefile setlocal noexpandtab
+  autocmd BufEnter *.sh setlocal tabstop=2
+  autocmd BufEnter *.sh setlocal shiftwidth=2
+  autocmd BufEnter *.sh setlocal softtabstop=2
 augroup END
 
 " Convenient command to see the difference between the current buffer and the
@@ -125,3 +131,5 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+
+nnoremap <C-f> :%!python3 -m json.tool<CR>

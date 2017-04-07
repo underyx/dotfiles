@@ -1,6 +1,7 @@
 [core]
     excludesfile = ~/.gitignore.global
     whitespace = space-before-tab,trailing-space
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [user]
     name = Bence Nagy
@@ -21,31 +22,46 @@
     add-s = !zsh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
     review = !git-review-pr
     a = add
+    aa = add . -A
     ap = add --patch
+    bl = blame
     c = commit
     ca = commit -a
     cm = commit -m
     cam = commit -am
     ch = checkout
     chb = checkout -b
+    cl = clone
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
     d = diff
     dc = diff --cached
     f = fetch
     fo = fetch origin
+    fu = fetch upstream
     l = log
     lo = log --oneline
     p = pull
+    pt = push --tags
+    t = tag
     s = status
     sh = show
     r = rebase
     rom = rebase origin/master
+    rum = rebase upstream/master
     rh = reset HEAD
     ri = rebase --interactive
+    riom = rebase --interactive origin/master
+    ra = rebase --abort
     rc = rebase --continue
+    upstream = remote add upstream
     pop = stash pop
     drop = stash drop
     af = !zsh -c 'git amend && git force'
+    aaf = !zsh -c 'git aa && git amend && git force'
     forom = !zsh -c 'git fo && git rom'
+    furum = !zsh -c 'git fu && git rum'
 
 [help]
     autocorrect = 5
@@ -55,3 +71,8 @@
 
 [commit]
     gpgsign = true
+
+[rebase]
+    autosquash = true
+[rerere]
+	enabled = true

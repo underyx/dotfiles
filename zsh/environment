@@ -2,7 +2,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GOPATH="$HOME/go"
-export PATH="$HOME/bin:$GOPATH/bin:/usr/local/m-cli:/usr/local/sbin:$HOME/.rvm/bin:/usr/local/share/pypy3:$PATH"
+export PATH="$HOME/.yarn-config/global/node_modules/.bin:./node_modules/.bin:$HOME/bin:$HOME/.yarn-cache/.global/node_modules/.bin:$GOPATH/bin:/usr/local/m-cli:/usr/local/sbin:$HOME/.rvm/bin:$PATH:/usr/local/share/pypy3"
 
 if exists nvim; then
   export EDITOR=$(command -v nvim)
@@ -10,4 +10,11 @@ elif exists vim; then
   export EDITOR=$(command -v nvim)
 fi
 
+if exists yarn; then
+  export PATH=$PATH:$(cache_output "yarn global bin")
+fi
+
 export VISUAL="$EDITOR"
+
+# fix tmux 2.2 on macOS
+export EVENT_NOKQUEUE=1

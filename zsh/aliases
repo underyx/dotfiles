@@ -5,13 +5,14 @@ fi
 alias 8="ping 8.8.8.8"
 alias g="git"
 alias l="ls -AltrhG"
+alias lo="m screensaver"
 
 alias zshrc="$EDITOR ~/.zsh"
 alias vimrc="$EDITOR ~/.vimrc"
 alias nvimrc="$EDITOR ~/.config/nvim/init.vim"
 
-alias release="python setup.py bdist_wheel --universal upload --sign && python setup.py sdist upload --sign"
+alias release="python3 setup.py bdist_wheel --universal upload --sign && python3 setup.py sdist upload --sign"
 alias venv="source env/bin/activate"
 
-alias pip-up="pip-compile --upgrade"
-alias pip-push-up="git checkout master && git branch -D bence/pip-up || git checkout -b bence/pip-up && pip-up && git add requirements.txt && git commit -m 'Update requirements' && git push"
+alias pip-up='gfind . -name "*requirements.in" -exec pip-compile --upgrade "{}" \;'
+alias pip-push-up="git stash && git checkout master && git pull && git branch -D bence/pip-up; git checkout -b bence/pip-up && pip-up && git add *requirements.txt && git commit -m 'Update requirements' && git push --force-with-lease origin bence/pip-up"

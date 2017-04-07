@@ -2,10 +2,28 @@ exists() {
   type -p $1 > /dev/null
 }
 
+cache_output() {
+  local cache_hash="$(echo $1 | md5sum | awk '{print $1}')"
+  local cache_path="$ZSHCACHE/$cache_hash"
+  if [ fasd -nt "$cache_path" -o ! -s "$cache_path" ]; then
+     eval "$1" >| "$cache_path"
+  fi
+  cat $cache_path
+}
+
 mgmt() {
   if [[ -z $1 ]]; then
     ssh -t mgmt tmux attach -t $(whoami)
-    exit 0
+    return 0
   fi
-  ssh -t mgmt tmux new-session -t $(whoami)\\\; new-window -t $(whoami)\\\; new-window -n $1 \"sudo ssh $1\"
+  ssh -t mgmt tmux new-session -t $(whoami)-ssh\\\; new-window -t $(whoami)-ssh\\\; new-window -n $1 \"sudo ssh $1\"
+}
+
+fixup() {
+  if [[ -z $1 ]]; then
+    echo "Usage: fixup <commit-ish>"
+    return 2
+  fi
+  git commit --fixup=$1
+  git rebase --interactive "$1^"
 }

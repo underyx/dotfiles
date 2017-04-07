@@ -28,6 +28,10 @@ if exists gpg-agent; then
   source $ZSHHOME/gpg
 fi
 
+if exists pyenv; then
+  source $ZSHHOME/pyenv
+fi
+
 source $ZSHHOME/autoenv/activate.sh
 
 for file in $HOME/.zshlocal/post/*(.N); do
