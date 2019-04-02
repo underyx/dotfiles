@@ -1,8 +1,10 @@
 env/
+
+*.pyc
+
 .DS_Store
 *~
 *.orig
-*.ipynb
 .ipynb_checkpoints/
 .ansible-vault-password
 .python-version
