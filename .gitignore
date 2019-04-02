@@ -1,4 +1,4 @@
 vim/init.vim
 vim/plugged/*
 vim/.netrwhist
-
+zsh/.cache
