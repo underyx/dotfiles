@@ -24,10 +24,6 @@ if exists brew; then
   source $ZSHHOME/dvm
 fi
 
-if exists gpg-agent; then
-  source $ZSHHOME/gpg
-fi
-
 if exists pyenv; then
   source $ZSHHOME/pyenv
 fi
