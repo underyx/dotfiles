@@ -18,7 +18,6 @@
     compactionHeuristic = true
 
 [alias]
-    pull = pull --rebase
     amend = commit --amend --no-edit
     force = push --force-with-lease
     unstage = reset HEAD --
@@ -45,7 +44,7 @@
     fu = fetch upstream
     l = log
     lo = log --oneline
-    p = pull
+    p = pull --rebase --autostash
     pt = push --tags
     t = tag
     s = status
@@ -58,13 +57,16 @@
     riom = rebase --interactive origin/master
     ra = rebase --abort
     rc = rebase --continue
+    rs = rebase --skip
     upstream = remote add upstream
     pop = stash pop
     drop = stash drop
     af = !zsh -c 'git amend && git force'
     aaf = !zsh -c 'git aa && git amend && git force'
     forom = !zsh -c 'git fo && git rom'
+    sforom = !zsh -c 'git stash && git fo && git rom && git pop'
     furum = !zsh -c 'git fu && git rum'
+    sfurum = !zsh -c 'git stash && git fu && git rum && git pop'
 
 [help]
     autocorrect = 5
