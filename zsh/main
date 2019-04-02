@@ -1,8 +1,11 @@
+source $HOME/.zplugin/bin/zplugin.zsh
+
 source $ZSHHOME/zsh-settings
 source $ZSHHOME/functions
 source $ZSHHOME/environment
 source $HOME/.zshlocal/secrets
 source $ZSHHOME/aliases
+source $ZSHHOME/plugins
 
 for file in $HOME/.zshlocal/pre/*(.N); do
   source $file
@@ -10,10 +13,6 @@ done
 
 if exists fasd; then
   source $ZSHHOME/fasd
-fi
-
-if [ -n "$POWERLINE_BASE_DIR" ]; then
-  source $ZSHHOME/powerline
 fi
 
 if [[ -e ${HOME}/.iterm2_shell_integration.zsh ]]; then

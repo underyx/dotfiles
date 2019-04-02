@@ -14,6 +14,7 @@
 - shell:
     - mkdir -p ~/.zshlocal/pre
     - mkdir -p ~/.zshlocal/post
+    - mkdir -p ~/.zplugin
     - touch ~/.zshlocal/secrets
     - chmod 600 ~/.zshlocal/secrets
 
@@ -22,6 +23,7 @@
       path: zshrc
       force: yes
     ~/.zsh: zsh
+    ~/.zplugin/bin: zplugin
 
 # vim & nvim
 - shell:
