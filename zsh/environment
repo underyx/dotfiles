@@ -2,7 +2,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GOPATH="$HOME/go"
-export PATH="$HOME/.yarn-config/global/node_modules/.bin:./node_modules/.bin:$HOME/bin:$HOME/.yarn-cache/.global/node_modules/.bin:$GOPATH/bin:/usr/local/m-cli:/usr/local/sbin:$HOME/.rvm/bin:$PATH:/usr/local/share/pypy3"
+export PATH="./node_modules/.bin:$PATH:$HOME/bin:$HOME/.npm-packages/bin:$GOPATH/bin:/usr/local/m-cli:/usr/local/sbin:/usr/local/share/pypy3"
 
 if exists nvim; then
   export EDITOR=$(command -v nvim)
