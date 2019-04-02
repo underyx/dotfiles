@@ -4,18 +4,18 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - shell:
-  - mkdir -p ~/bin
-  - mkdir -p ~/.config
+    - mkdir -p ~/bin
+    - mkdir -p ~/.config
 
 # zsh
 - shell:
-  - mkdir -p ~/.zshlocal/pre
-  - mkdir -p ~/.zshlocal/post
-  - touch ~/.zshlocal/secrets
-  - chmod 600 ~/.zshlocal/secrets
+    - mkdir -p ~/.zshlocal/pre
+    - mkdir -p ~/.zshlocal/post
+    - touch ~/.zshlocal/secrets
+    - chmod 600 ~/.zshlocal/secrets
 
 - link:
     ~/.zshrc:
@@ -41,10 +41,10 @@
 # git
 - link:
     ~/.gitconfig: gitconfig
+    ~/kiwi/gitconfig: kiwi/gitconfig
     ~/.gitignore.global: gitignore.global
     ~/.git-templates: git-templates
     ~/bin/git-review-pr: bin/git-review-pr
 
 - link:
     ~/.tmux.conf: tmux.conf
-
