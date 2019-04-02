@@ -32,6 +32,7 @@ export KEYTIMEOUT=1
 export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
+export HIST_IGNORE_SPACE=1
 
 fpath=(~/.zsh/completions $fpath)
 
