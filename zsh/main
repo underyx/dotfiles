@@ -15,6 +15,10 @@ if exists fasd; then
   source $ZSHHOME/fasd
 fi
 
+if [ -n "$POWERLINE_BASE_DIR" ]; then
+  source $ZSHHOME/powerline
+fi
+
 if [[ -e ${HOME}/.iterm2_shell_integration.zsh ]]; then
   source ${HOME}/.iterm2_shell_integration.zsh
 fi
