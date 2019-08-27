@@ -4,9 +4,12 @@
 [submodule "vim/autoload"]
 	path = vim/autoload
 	url = https://github.com/junegunn/vim-plug
-[submodule "zsh/autoenv"]
-	path = zsh/autoenv
-	url = https://github.com/kennethreitz/autoenv
 [submodule "zplugin"]
 	path = zplugin
 	url = https://github.com/zdharma/zplugin.git
+[submodule "autoenv"]
+	path = autoenv
+	url = https://github.com/inishchith/autoenv
+[submodule "zsh/autoenv"]
+	path = zsh/autoenv
+	url = https://github.com/inishchith/autoenv
