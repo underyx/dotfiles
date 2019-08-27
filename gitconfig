@@ -74,9 +74,6 @@
 [help]
     autocorrect = 5
 
-[init]
-    templatedir = ~/.git-templates
-
 [commit]
     gpgsign = true
 
