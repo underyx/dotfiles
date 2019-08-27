@@ -44,6 +44,7 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/kiwi/gitconfig: kiwi/gitconfig
+    ~/astro/gitconfig: astro/gitconfig
     ~/.gitignore.global: gitignore.global
     ~/.git-templates: git-templates
     ~/bin/git-review-pr: bin/git-review-pr

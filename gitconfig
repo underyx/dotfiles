@@ -6,6 +6,9 @@
 [includeIf "gitdir:~/kiwi/"]
     path = ~/kiwi/.gitconfig
 
+[includeIf "gitdir:~/astro/"]
+    path = ~/astro/.gitconfig
+
 [user]
     name = Bence Nagy
     email = bence@underyx.me
