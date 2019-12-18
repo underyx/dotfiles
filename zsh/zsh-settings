@@ -37,3 +37,4 @@ export HIST_IGNORE_SPACE=1
 fpath=(~/.zsh/completions $fpath)
 
 export ZSHCACHE=$ZSHHOME/.cache
+export ZSH_CACHE_DIR=$ZSHCACHE
