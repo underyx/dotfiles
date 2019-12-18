@@ -2,6 +2,7 @@
     excludesfile = ~/.gitignore.global
     whitespace = space-before-tab,trailing-space
     pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = vim
 
 [includeIf "gitdir:~/kiwi/"]
     path = ~/kiwi/.gitconfig
@@ -12,7 +13,7 @@
 [user]
     name = Bence Nagy
     email = bence@underyx.me
-    signingkey = E45A2B0EB35D2590
+    signingkey = E54DDF2009280833
 
 [push]
     default = current
@@ -75,7 +76,7 @@
     autocorrect = 5
 
 [commit]
-    gpgsign = true
+	gpgsign = true
 
 [rebase]
     autosquash = true
@@ -95,3 +96,5 @@
 	whitespace = red reverse
 [color]
 	ui = true
+[gpg]
+	program = gpg
