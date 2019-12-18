@@ -6,6 +6,7 @@ alias 8="ping 8.8.8.8"
 alias g="git"
 alias k="kubectl"
 alias dc="docker-compose"
+alias fd="fdfind"
 alias l="ls -AltrhG"
 alias lo="m lock"
 
