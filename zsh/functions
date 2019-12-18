@@ -24,6 +24,6 @@ fixup() {
     echo "Usage: fixup <commit-ish>"
     return 2
   fi
-  git commit --fixup=$1
+  git commit --no-verify --fixup=$1
   git rebase --interactive "$1^"
 }
