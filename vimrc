@@ -1,7 +1,7 @@
 set nocompatible
 
 call plug#begin()
-Plug 'chriskempson/base16-vim'  " color scheme for base16 colored terminals
+Plug 'arcticicestudio/nord-vim'
 Plug 'bling/vim-airline'  " fancy status bar
 Plug 'sjl/gundo.vim'
 Plug 'rking/ag.vim'  " the silver searcher, for quickly searching code in project
@@ -13,7 +13,7 @@ Plug 'vim-scripts/indentpython.vim'  " better indentation for Python code
 call plug#end()
 
 " silent! ignores errors; needed to not fail when first installing base16
-silent! colorscheme base16-chalk
+silent! colorscheme nord
 set background=dark
 syntax on
 
