@@ -4,14 +4,8 @@ export LANG=en_US.UTF-8
 export GOPATH="$HOME/go"
 export PATH="./node_modules/.bin:$PATH:$HOME/bin:$HOME/.npm-packages/bin:$GOPATH/bin:/usr/local/m-cli:/usr/local/sbin:/usr/local/share/pypy3"
 
-if exists nvim; then
-  export EDITOR=$(command -v nvim)
-elif exists vim; then
-  export EDITOR=$(command -v nvim)
-fi
-
-if exists yarn; then
-  export PATH=$PATH:$(cache_output "yarn global bin")
+if exists vim; then
+  export EDITOR=$(command -v vim)
 fi
 
 if exists gpg; then

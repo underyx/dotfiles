@@ -25,20 +25,18 @@
     ~/.zsh: zsh
     ~/.zplugin/bin: zplugin
 
-# vim & nvim
+# vim
 - shell:
     - mkdir -p ~/.vimtmp
 
 - link:
     ~/.vim: vim
-    ~/.config/nvim: vim
 
 - link:
     ~/.vimrc: vimrc
-    ~/.config/nvim/init.vim: vimrc
 
 - shell:
-    - zsh -c '{type -p vim && vim +PlugInstall +qall}; {type -p nvim && nvim +PlugInstall +qall} || true'
+    - zsh -c '{type -p vim && vim +PluginInstall +qall} || true'
 
 # git
 - link:
@@ -46,5 +44,4 @@
     ~/kiwi/gitconfig: kiwi/gitconfig
     ~/astro/gitconfig: astro/gitconfig
     ~/.gitignore.global: gitignore.global
-    ~/.git-templates: git-templates
     ~/bin/git-review-pr: bin/git-review-pr
