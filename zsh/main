@@ -28,7 +28,7 @@ if exists brew; then
 fi
 
 if exists pyenv; then
-  source $ZSHHOME/pyenv
+  eval "$(pyenv init -)"
 fi
 
 source $ZSHHOME/autoenv/activate.sh
