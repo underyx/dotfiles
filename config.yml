@@ -12,6 +12,7 @@
 
 # zsh
 - shell:
+    - mkdir -p ~/.zsh/.cache
     - mkdir -p ~/.zshlocal/pre
     - mkdir -p ~/.zshlocal/post
     - mkdir -p ~/.zplugin
