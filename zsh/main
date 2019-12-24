@@ -31,7 +31,9 @@ if exists pyenv; then
   eval "$(pyenv init -)"
 fi
 
-source $ZSHHOME/autoenv/activate.sh
+if exists direnv; then
+  eval "$(direnv hook zsh)"
+fi
 
 for file in $HOME/.zshlocal/post/*(.N); do
   source $file
