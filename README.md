@@ -10,6 +10,43 @@ Got only 5 seconds to spend on this? Try my dotfiles out with
 
 Whee! :tada:
 
+## macOS notes
+
+I normally install these things:
+
+```
+brew install \
+    coreutils \
+    diff-so-fancy \
+    direnv \
+    fasd \
+    findutils \
+    git \
+    gnupg \
+    htop \
+    kubectx \
+    kubernetes-cli \
+    pinentry-mac \
+    pyenv
+
+brew cask install \
+    amethyst \
+    discord \
+    docker \
+    dynalist \
+    flux \
+    font-roboto-mono-for-powerline \
+    google-chrome \
+    iterm2 \
+    karabiner-elements \
+    keybase \
+    marvin \
+    spotify \
+    steam \
+    visual-studio-code
+```
+
+
 [build status badge]: https://gitlab.com/underyx/dotfiles/badges/master/build.svg
 
 [build status]: https://gitlab.com/underyx/dotfiles/commits/master
