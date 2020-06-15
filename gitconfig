@@ -7,7 +7,7 @@
 [user]
     name = Bence Nagy
     email = bence@underyx.me
-    signingkey = CC4FCE455227A43A
+    signingkey = 88D12683EFF2E23E
 
 [push]
     default = current
