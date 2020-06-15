@@ -24,6 +24,13 @@ fixup() {
     echo "Usage: fixup <commit-ish>"
     return 2
   fi
-  git commit --no-verify --fixup=$1
-  git rebase --interactive "$1^"
+  git commit --fixup=$1
+  git rebase --interactive --autosquash "$1^"
+}
+
+up() {
+  which pipx && pipx upgrade-all
+  which brew && brew upgrade
+  which softwareupdate && softwareupdate -d
+  which npm && npx npm-check -g -u
 }
