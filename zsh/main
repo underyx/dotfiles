@@ -23,10 +23,6 @@ if [[ -e ${HOME}/.iterm2_shell_integration.zsh ]]; then
   source ${HOME}/.iterm2_shell_integration.zsh
 fi
 
-if exists brew; then
-  source $ZSHHOME/dvm
-fi
-
 if exists pyenv; then
   eval "$(pyenv init -)"
 fi
