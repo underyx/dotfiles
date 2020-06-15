@@ -35,6 +35,7 @@
     cp = cherry-pick
     cpa = cherry-pick --abort
     cpc = cherry-pick --continue
+    cps = cherry-pick --skip
     d = diff
     dc = diff --cached
     f = fetch
@@ -50,9 +51,14 @@
     r = rebase
     rom = rebase origin/master
     rum = rebase upstream/master
+    rod = rebase origin/develop
+    rud = rebase upstream/develop
+    riom = rebase --interactive origin/master
+    rium = rebase --interactive upstream/master
+    riod = rebase --interactive origin/develop
+    riud = rebase --interactive upstream/develop
     rh = reset HEAD
     ri = rebase --interactive
-    riom = rebase --interactive origin/master
     ra = rebase --abort
     rc = rebase --continue
     rs = rebase --skip
@@ -62,9 +68,21 @@
     af = !zsh -c 'git amend && git force'
     aaf = !zsh -c 'git aa && git amend && git force'
     forom = !zsh -c 'git fo && git rom'
-    sforom = !zsh -c 'git stash && git fo && git rom && git pop'
     furum = !zsh -c 'git fu && git rum'
+    forod = !zsh -c 'git fo && git rod'
+    furud = !zsh -c 'git fu && git rud'
+    foriom = !zsh -c 'git fo && git riom'
+    furium = !zsh -c 'git fu && git rium'
+    foriod = !zsh -c 'git fo && git riod'
+    furiud = !zsh -c 'git fu && git riud'
+    sforom = !zsh -c 'git stash && git fo && git rom && git pop'
     sfurum = !zsh -c 'git stash && git fu && git rum && git pop'
+    sforod = !zsh -c 'git stash && git fo && git rod && git pop'
+    sfurud = !zsh -c 'git stash && git fu && git rud && git pop'
+    sforiom = !zsh -c 'git stash && git fo && git riom && git pop'
+    sfurium = !zsh -c 'git stash && git fu && git rium && git pop'
+    sforiod = !zsh -c 'git stash && git fo && git riod && git pop'
+    sfuriud = !zsh -c 'git stash && git fu && git riud && git pop'
 
 [help]
     autocorrect = 5
