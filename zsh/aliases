@@ -1,7 +1,3 @@
-if exists hub; then
-  alias git=hub
-fi
-
 alias 8="ping 8.8.8.8"
 alias g="git"
 alias k="kubectl"
