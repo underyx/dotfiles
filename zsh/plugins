@@ -1,6 +1,7 @@
-zplugin snippet OMZ::plugins/docker/_docker
-zplugin snippet OMZ::plugins/docker-compose/_docker-compose
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
-zplugin snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
-zplugin snippet OMZ::plugins/python/python.plugin.zsh
-zplugin snippet OMZ::plugins/pip/pip.plugin.zsh
+zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::git
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::python
+zinit snippet OMZP::pip
+zinit snippet OMZP::asdf

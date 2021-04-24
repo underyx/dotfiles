@@ -23,6 +23,7 @@ compinit
 setopt incappendhistory sharehistory autocd beep extendedglob notify
 unsetopt nomatch
 
+bindkey -e
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^?' backward-delete-char
 bindkey '^[[A' up-line-or-search

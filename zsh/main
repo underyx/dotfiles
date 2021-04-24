@@ -15,20 +15,8 @@ if exists fasd; then
   source $ZSHHOME/fasd
 fi
 
-if exists powerline; then
-  source ~/.local/pipx/venvs/powerline-status/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
-
 if [[ -e ${HOME}/.iterm2_shell_integration.zsh ]]; then
   source ${HOME}/.iterm2_shell_integration.zsh
-fi
-
-if exists pyenv; then
-  eval "$(pyenv init -)"
-fi
-
-if exists rbenv; then
-  eval "$(rbenv init -)"
 fi
 
 if exists direnv; then
@@ -38,4 +26,3 @@ fi
 for file in $HOME/.zshlocal/post/*(.N); do
   source $file
 done
-

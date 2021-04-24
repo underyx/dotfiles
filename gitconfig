@@ -9,11 +9,39 @@
     email = bence@underyx.me
     signingkey = 88D12683EFF2E23E
 
+[init]
+	defaultBranch = main
+
+[pull]
+    default = current
+
 [push]
     default = current
 
+[commit]
+	gpgsign = true
+
+[rebase]
+    autosquash = true
+
+[rerere]
+	enabled = true
+
 [diff]
     compactionHeuristic = true
+
+[help]
+    autocorrect = 5
+
+[color]
+	ui = true
+
+[gpg]
+	program = gpg
+
+[url "git@github.com:"]
+	insteadOf = http://github.com/
+	insteadOf = https://github.com/
 
 [alias]
     amend = commit --amend --no-edit
@@ -84,18 +112,6 @@
     sforiod = !zsh -c 'git stash && git fo && git riod && git pop'
     sfuriud = !zsh -c 'git stash && git fu && git riud && git pop'
 
-[help]
-    autocorrect = 5
-
-[commit]
-	gpgsign = true
-
-[rebase]
-    autosquash = true
-
-[rerere]
-	enabled = true
-
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -109,9 +125,3 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-
-[color]
-	ui = true
-
-[gpg]
-	program = gpg

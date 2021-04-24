@@ -10,3 +10,4 @@ env/
 .ansible-vault-password
 .python-version
 .vscode/
+**/.idea/

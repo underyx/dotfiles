@@ -12,14 +12,14 @@
 
 # zsh
 - shell:
-    - mkdir -p ~/.zplugin
+    - mkdir -p ~/.zinit
 
 - link:
     ~/.zshrc:
       path: zshrc
       force: yes
     ~/.zsh: zsh
-    ~/.zplugin/bin: zplugin
+    ~/.zinit/bin: zinit
 
 - shell:
     - mkdir -p ~/.zsh/.cache
@@ -51,8 +51,8 @@
     ~/.gitignore.global: gitignore.global
     ~/bin/git-review-pr: bin/git-review-pr
     ~/.gnupg/gpg.conf:
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
       path: gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf:
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
       path: gnupg/gpg-agent.conf
