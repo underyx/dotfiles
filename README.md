@@ -17,17 +17,13 @@ I normally install these things:
 ```
 brew install \
     coreutils \
-    diff-so-fancy \
-    direnv \
-    fasd \
     findutils \
     git \
     gnupg \
     htop \
     kubectx \
     kubernetes-cli \
-    pinentry-mac \
-    pyenv
+    pinentry-mac
 
 brew tap homebrew/cask-fonts
 
@@ -48,7 +44,5 @@ brew cask install \
     visual-studio-code
 ```
 
-
 [build status badge]: https://gitlab.com/underyx/dotfiles/badges/master/build.svg
-
 [build status]: https://gitlab.com/underyx/dotfiles/commits/master

@@ -1,3 +1,0 @@
-eval "$(cache_output "fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install")"
-alias v='f -e vim'
-alias o='a -e open'

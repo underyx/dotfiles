@@ -1,28 +1,68 @@
-source $HOME/.zplugin/bin/zplugin.zsh
+source $HOME/.zinit/bin/zinit.zsh
 
-source $ZSHHOME/zsh-settings
-source $ZSHHOME/functions
-source $ZSHHOME/environment
-source $HOME/.zshlocal/secrets
-source $ZSHHOME/aliases
-source $ZSHHOME/plugins
+zinit snippet $ZSHHOME/zsh-settings
+zinit snippet $ZSHHOME/functions
+zinit snippet $ZSHHOME/environment
+zinit snippet $ZSHHOME/aliases
 
-for file in $HOME/.zshlocal/pre/*(.N); do
-  source $file
-done
+zinit ice as"program" pick"bin/asdf" src"asdf.sh"
+zinit load asdf-vm/asdf
 
-if exists fasd; then
-  source $ZSHHOME/fasd
-fi
+zinit ice \
+  wait lucid from"gh-r" as"program" mv"direnv* -> direnv" \
+  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
+  pick"direnv" src="zhook.zsh"
+zinit load direnv/direnv
 
-if [[ -e ${HOME}/.iterm2_shell_integration.zsh ]]; then
-  source ${HOME}/.iterm2_shell_integration.zsh
-fi
+zinit load agkozak/zsh-z
 
-if exists direnv; then
-  eval "$(direnv hook zsh)"
-fi
+zinit ice wait lucid as"completion"
+zinit snippet OMZ::plugins/docker/_docker
 
-for file in $HOME/.zshlocal/post/*(.N); do
-  source $file
-done
+zinit wait lucid for \
+  OMZP::docker-compose \
+  OMZP::git \
+  OMZP::kubectl \
+  OMZP::python \
+  OMZP::pip
+
+zinit ice \
+  wait lucid as"command" pick"bin/*" atclone'./_utils/download_files.sh' \
+  atpull'%atclone' if"[[ $+ITERM_PROFILE ]]"
+zinit load decayofmind/zsh-iterm2-utilities
+
+# functions
+zinit wait lucid \
+  for 'https://raw.githubusercontent.com/gnachman/iterm2-website/master/source/shell_integration/zsh'
+
+zinit ice wait lucid from"gh-r" as"program" pick"delta*/delta"
+zinit load dandavison/delta
+
+zinit ice wait lucid from"gh-r" as"program"
+zinit load junegunn/fzf
+
+zinit ice wait lucid from"gh-r" as"program" pick"bat*/bat" atload"alias cat=bat"
+zinit load sharkdp/bat
+
+zinit ice wait lucid from"gh-r" as"program" pick"ripgrep*/rg"
+zinit load BurntSushi/ripgrep
+
+zinit ice wait lucid from"gh-r" as"program" pick"fd*/fd"
+zinit load sharkdp/fd
+
+zinit ice wait lucid from"gh-r" as"program" mv"gh* -> gh" pick"gh/bin/gh" \
+  atclone='./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone'
+zinit load cli/cli
+
+zinit ice from"gh-r" as"program" atinit'eval "$(starship init zsh)"'
+zinit load starship/starship
+
+# from https://github.com/zdharma/fast-syntax-highlighting/tree/a62d721affc771de2c78201d868d80668a84c1e1#zinit
+# needs to be the last one loaded
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions

@@ -56,3 +56,7 @@
     ~/.gnupg/gpg-agent.conf:
       if: "[ `uname` = Darwin ]"
       path: gnupg/gpg-agent.conf
+
+# starship
+- link:
+    ~/.config/starship.toml: starship.toml
