@@ -1,5 +1,14 @@
 [aws]
 disabled = true
 
+[env_var]
+variable = "AWS_ACCESS_KEY_ID"
+symbol = "🔓"
+style = "red bold"
+format = "$symbol [with AWS_ACCESS_KEY_ID set]($style)"
+
 [gcloud]
 disabled = true
+
+[status]
+disabled = false
