@@ -54,7 +54,7 @@ zinit ice wait lucid from"gh-r" as"program" mv"gh* -> gh" pick"gh/bin/gh" \
   atclone='./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone'
 zinit load cli/cli
 
-zinit ice from"gh-r" as"program" atinit'eval "$(starship init zsh)"'
+zinit ice from"gh-r" as"program" atinit'eval "$($PWD/starship init zsh)"'
 zinit load starship/starship
 
 # from https://github.com/zdharma/fast-syntax-highlighting/tree/a62d721affc771de2c78201d868d80668a84c1e1#zinit
