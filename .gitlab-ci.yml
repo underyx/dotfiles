@@ -1,31 +1,30 @@
 stages:
- - build
- - release
+  - build
+  - release
 
 static-analysis:
   stage: build
   image: coala/base:0.8
   script:
-   - coala-ci
+    - coala-ci
 
 build:
   stage: build
   image: docker:1.12
   services:
-   - docker:dind
+    - docker:dind
   script:
-   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-   - docker build -t registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME .
-   - docker push registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME .
+    - docker push registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME
 
 release:
   stage: release
   image: docker:1.12
   services:
-   - docker:dind
+    - docker:dind
   script:
-   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-   - docker pull registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME
-   - docker tag registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME registry.gitlab.com/underyx/dotfiles:latest
-   - docker push registry.gitlab.com/underyx/dotfiles:latest
-
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker pull registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME
+    - docker tag registry.gitlab.com/underyx/dotfiles:$CI_BUILD_REF_NAME registry.gitlab.com/underyx/dotfiles:latest
+    - docker push registry.gitlab.com/underyx/dotfiles:latest
