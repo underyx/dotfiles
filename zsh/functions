@@ -20,9 +20,9 @@ fixup() {
 }
 
 up() {
-  which zinit && zinit self-update && zinit update --all
-  which pipx && pipx upgrade-all
-  which brew && brew upgrade
-  which softwareupdate && softwareupdate -d
-  which npm && npx npm-check -g -u
+  which zinit > /dev/null && zinit self-update && zinit update --all
+  which pipx > /dev/null && pipx upgrade-all
+  which brew > /dev/null && brew upgrade
+  which softwareupdate > /dev/null && softwareupdate -d
+  which npm > /dev/null && npx npm-check -g -u
 }

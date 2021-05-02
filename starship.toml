@@ -10,5 +10,8 @@ format = "$symbol [with AWS_ACCESS_KEY_ID set]($style)"
 [gcloud]
 disabled = true
 
+[shlvl]
+disabled = false
+
 [status]
 disabled = false

@@ -5,7 +5,7 @@ zinit snippet $ZSHHOME/functions
 zinit snippet $ZSHHOME/environment
 zinit snippet $ZSHHOME/aliases
 
-zinit ice as"program" pick"bin/asdf" src"asdf.sh" atinit'export PATH=$(bin/asdf where python)/bin:$PATH'
+zinit ice wait lucid as"program" pick"bin/asdf" src"asdf.sh" atinit'export PATH=$(bin/asdf where python)/bin:$PATH'
 zinit load asdf-vm/asdf
 
 zinit ice \
@@ -14,11 +14,9 @@ zinit ice \
   pick"direnv" src="zhook.zsh"
 zinit load direnv/direnv
 
-zinit load agkozak/zsh-z
+zinit wait lucid for agkozak/zsh-z
 
-zinit ice wait lucid as"completion"
-zinit snippet OMZ::plugins/docker/_docker
-
+zinit wait lucid as"completion" for OMZ::plugins/docker/_docker
 zinit wait lucid for \
   OMZP::docker-compose \
   OMZP::git \
@@ -31,7 +29,6 @@ zinit ice \
   atpull'%atclone' if"[[ $+ITERM_PROFILE ]]"
 zinit load decayofmind/zsh-iterm2-utilities
 
-# functions
 zinit wait lucid \
   for 'https://raw.githubusercontent.com/gnachman/iterm2-website/master/source/shell_integration/zsh'
 
@@ -54,9 +51,6 @@ zinit ice wait lucid from"gh-r" as"program" mv"gh* -> gh" pick"gh/bin/gh" \
   atclone='./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone'
 zinit load cli/cli
 
-zinit ice from"gh-r" as"program" atinit'eval "$($PWD/starship init zsh)"'
-zinit load starship/starship
-
 # from https://github.com/zdharma/fast-syntax-highlighting/tree/a62d721affc771de2c78201d868d80668a84c1e1#zinit
 # needs to be the last one loaded
 zinit wait lucid for \
@@ -66,3 +60,8 @@ zinit wait lucid for \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions
+
+zinit ice wait"!" silent from"gh-r" as"program" \
+  atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
+  src="./init.zsh"
+zinit load starship/starship
