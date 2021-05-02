@@ -23,7 +23,6 @@ repos:
     hooks:
       - id: markdownlint
       - id: script-must-not-have-extension
-      - id: shfmt
 
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.7.2.1
