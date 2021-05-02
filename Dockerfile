@@ -8,4 +8,4 @@ RUN \
   git clone /git/underyx/dotfiles &&\
   dotfiles/install
 
-CMD [ zsh ]
+CMD [ /bin/zsh ]
