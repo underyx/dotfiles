@@ -1,7 +1,7 @@
 # dotfiles [![build status][build status badge]][build status]
 
 Got only 5 seconds to spend on this? Try my dotfiles out with
-`docker run -ti registry.gitlab.com/underyx/dotfiles`!
+`docker run -ti ghcr.io/underyx/dotfiles`!
 
 ## Installation
 
