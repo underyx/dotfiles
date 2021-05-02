@@ -3,11 +3,10 @@ on:
   push:
     branches:
       - main
-      - master
-name: Semgrep
+name: Linters
 jobs:
   semgrep:
-    name: Scan
+    name: Semgrep
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,3 +15,10 @@ jobs:
           auditOn: push
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
           publishDeployment: 28
+  pre-commit:
+    name: pre-commit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: pre-commit/action@v2.0.3
