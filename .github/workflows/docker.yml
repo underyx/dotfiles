@@ -6,7 +6,7 @@ on:
       - "**"
     tags:
       - "v*"
-  pull_request:
+  pull_request_target:
 
 permissions:
   contents: read
@@ -17,7 +17,6 @@ jobs:
   docker:
     name: Publish Docker image
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'underyx'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
