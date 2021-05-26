@@ -56,6 +56,3 @@
 # starship
 - link:
     ~/.config/starship.toml: starship.toml
-
-- shell:
-    - zsh ~/.zshrc

@@ -5,7 +5,7 @@ zinit snippet $ZSHHOME/functions
 zinit snippet $ZSHHOME/environment
 zinit snippet $ZSHHOME/aliases
 
-zinit ice wait lucid as"program" pick"bin/asdf" src"asdf.sh" atinit'export PATH=$(bin/asdf where python)/bin:$PATH'
+zinit ice as"program" pick"bin/asdf" src"asdf.sh" atinit'export PATH=$(bin/asdf where nodejs)/.npm/bin:$(bin/asdf where python)/bin:$PATH'
 zinit load asdf-vm/asdf
 
 zinit ice \
