@@ -39,9 +39,8 @@
 [gpg]
 	program = gpg
 
-[url "git@github.com:"]
-	insteadOf = http://github.com/
-	insteadOf = https://github.com/
+[include]
+    path = .gitconfig.prefer-ssh
 
 [alias]
     amend = commit --amend --no-edit

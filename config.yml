@@ -44,6 +44,9 @@
 
 - link:
     ~/.gitconfig: gitconfig
+    ~/.gitconfig.prefer-ssh:
+      if: "[[ -d ~/.ssh ]]"
+      path: gitconfig.prefer-ssh
     ~/.gitignore.global: gitignore.global
     ~/bin/git-review-pr: bin/git-review-pr
     ~/.gnupg/gpg.conf:
