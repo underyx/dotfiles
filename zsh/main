@@ -24,13 +24,13 @@ zinit wait lucid for \
   OMZP::python \
   OMZP::pip
 
-zinit ice \
-  wait lucid as"command" pick"bin/*" atclone'./_utils/download_files.sh' \
-  atpull'%atclone' if"[[ $+ITERM_PROFILE ]]"
-zinit load decayofmind/zsh-iterm2-utilities
+# zinit ice \
+#   wait lucid as"command" pick"bin/*" atclone'./_utils/download_files.sh' \
+#   atpull'%atclone' if"[[ $+ITERM_PROFILE ]]"
+# zinit load decayofmind/zsh-iterm2-utilities
 
-zinit wait lucid \
-  for 'https://raw.githubusercontent.com/gnachman/iterm2-website/master/source/shell_integration/zsh'
+# zinit wait lucid \
+#   for 'https://raw.githubusercontent.com/gnachman/iterm2-website/master/source/shell_integration/zsh'
 
 zinit ice wait lucid from"gh-r" as"program" pick"delta*/delta"
 zinit load dandavison/delta

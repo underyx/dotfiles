@@ -1,7 +1,7 @@
 [core]
     excludesfile = ~/.gitignore.global
     whitespace = space-before-tab,trailing-space
-	pager = delta --dark --width=variable --24-bit-color --keep-plus-minus-markers
+	pager = delta --dark --width=variable --true-color --keep-plus-minus-markers
 	editor = vim
 
 [user]
@@ -19,7 +19,7 @@
     default = current
 
 [commit]
-	gpgsign = true
+	gpgsign = false
 
 [rebase]
     autosquash = true

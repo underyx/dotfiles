@@ -23,6 +23,8 @@
 
 - shell:
     - mkdir -p ~/.zsh/.cache
+    - mkdir -p ~/.zshlocal/pre
+    - mkdir -p ~/.zshlocal/post
 
 # vim
 - shell:
