@@ -6,4 +6,4 @@
 	url = https://github.com/junegunn/vim-plug
 [submodule "zinit"]
 	path = zinit
-	url = https://github.com/zdharma/zinit
+	url = https://github.com/zdharma-continuum/zinit

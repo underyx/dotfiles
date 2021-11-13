@@ -51,11 +51,11 @@ zinit ice wait lucid from"gh-r" as"program" mv"gh* -> gh" pick"gh/bin/gh" \
   atclone='./gh/bin/gh completion --shell zsh > _gh' atpull'%atclone'
 zinit load cli/cli
 
-# from https://github.com/zdharma/fast-syntax-highlighting/tree/a62d721affc771de2c78201d868d80668a84c1e1#zinit
+# from https://github.com/zdharma-continuum/fast-syntax-highlighting/tree/a62d721affc771de2c78201d868d80668a84c1e1#zinit
 # needs to be the last one loaded
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma/fast-syntax-highlighting \
+    zdharma-continuum/fast-syntax-highlighting \
  blockf \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
