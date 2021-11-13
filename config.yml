@@ -10,6 +10,14 @@
     - mkdir -p ~/bin
     - mkdir -p ~/.config
 
+# ssh
+- shell:
+    - mkdir -p ~/.ssh
+
+- link:
+    ~/.ssh/config:
+      path: ssh/config
+
 # zsh
 - shell:
     - mkdir -p ~/.zinit

@@ -1,0 +1,14 @@
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+Host remarkable
+  HostName 192.168.8.157
+  User root
+  IdentityFile ~/.ssh/remarkable
+
+Host remarkable-usb
+  HostName 10.11.99.1
+  User root
+  IdentityFile ~/.ssh/remarkable
