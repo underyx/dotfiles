@@ -2,7 +2,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GOPATH="$HOME/go"
-export PATH="./node_modules/.bin:$PATH:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:/usr/local/sbin:$PATH"
+export PATH="./node_modules/.bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:/usr/local/sbin:$PATH"
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
 
 if exists vim; then
