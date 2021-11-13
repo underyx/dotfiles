@@ -69,3 +69,8 @@
 # starship
 - link:
     ~/.config/starship.toml: starship.toml
+
+# mackup
+- link:
+    ~/.mackup.cfg:
+      path: mackup.cfg
