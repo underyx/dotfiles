@@ -15,33 +15,60 @@ Whee! :tada:
 I normally install these things:
 
 ```
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 brew install \
     coreutils \
+    delta \
     findutils \
     git \
     gnupg \
+    go \
     htop \
-    kubectx \
-    kubernetes-cli \
-    pinentry-mac
-
-brew tap homebrew/cask-fonts
-
-brew cask install \
-    amethyst \
-    discord \
+    jq \
+    rust \
+    svn \
+    wget \
+    1password \
+    aws-vpn-client \
+    dash \
+    datagrip \
     docker \
-    dynalist \
+    figma \
     flux \
-    font-roboto-mono-for-powerline \
     google-chrome \
+    google-chrome-canary \
+    google-drive \
     iterm2 \
     karabiner-elements \
-    keybase \
-    marvin \
+    linear \
+    mackup \
+    ngrok \
+    postman \
+    raycast \
+    rectangle \
+    semgrep \
+    slack \
     spotify \
-    steam \
     visual-studio-code
+
+brew install \
+    font-cozette \
+    font-fira-code-for-powerline \
+    font-roboto-mono-for-powerline \
+    font-source-code-pro-for-powerline
+
+versioned_tools=(kubectl kubectx terraform nodejs python)
+for tool in $versioned_tools; do
+  asdf plugin add $tool; asdf install $tool latest; asdf global $tool latest
+done
+
+asdf exec python -m pip install pipx
+python_tools=(black docker-compose git-delete-merged-branches httpie mypy pipenv poetry tox)
+for tool in $python_tools; do
+  pipx install $tool
+done
+pipx install jupyter --include-deps
 ```
 
 [build status badge]: https://gitlab.com/underyx/dotfiles/badges/master/build.svg
