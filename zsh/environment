@@ -3,7 +3,12 @@ export LANG=en_US.UTF-8
 
 export GOPATH="$HOME/go"
 export PATH="./node_modules/.bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:/usr/local/sbin:$PATH"
-export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
+export CPATH="$CPATH:$(brew --prefix)/include"
+export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
+
+if [[ `uname -m` == 'arm64' ]]; then
+  export SKIP=semgrep
+fi
 
 if exists vim; then
   export EDITOR=$(command -v vim)
@@ -14,6 +19,3 @@ if exists gpg; then
 fi
 
 export VISUAL="$EDITOR"
-
-# fix tmux 2.2 on macOS
-export EVENT_NOKQUEUE=1

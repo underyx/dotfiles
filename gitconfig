@@ -1,12 +1,15 @@
 [core]
     excludesfile = ~/.gitignore.global
     whitespace = space-before-tab,trailing-space
-	pager = delta --dark --width=variable --true-color --keep-plus-minus-markers
+	pager = delta
 	editor = vim
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
 
 [user]
     name = Bence Nagy
-    email = bence@underyx.me
+    email = nagy@bence.dev
     signingkey = 88D12683EFF2E23E
 
 [init]
@@ -112,16 +115,19 @@
     sforiod = !zsh -c 'git stash && git fo && git riod && git pop'
     sfuriud = !zsh -c 'git stash && git fu && git riud && git pop'
 
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+[delta]
+    features = decorations
+    syntax-theme = ansi
+    width = variable
 
-[color "diff"]
-	meta = 227
-	frag = magenta bold
-	commit = 227 bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+[delta "interactive"]
+    keep-plus-minus-markers = true
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax

@@ -31,17 +31,18 @@ brew install \
     wget \
     1password \
     aws-vpn-client \
-    dash \
+    homebrew/cask/dash \
     datagrip \
-    docker \
+    homebrew/cask/docker \
     figma \
-    flux \
+    homebrew/cask/flux \
     google-chrome \
     google-chrome-canary \
     google-drive \
+    imageoptim \
     iterm2 \
     karabiner-elements \
-    linear \
+    linear-linear \
     mackup \
     ngrok \
     postman \
@@ -50,6 +51,7 @@ brew install \
     semgrep \
     slack \
     spotify \
+    tailscale \
     visual-studio-code
 
 brew install \
