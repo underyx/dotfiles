@@ -63,7 +63,7 @@ zinit wait lucid for \
  atload"!_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions
 
-zinit ice silent from"gh-r" as"program" \
+zinit ice wait"!" bpick"*-apple-darwin.tar.gz" silent from"gh-r" as"program" \
   atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
   src="./init.zsh"
 zinit load starship/starship
