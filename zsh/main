@@ -22,7 +22,6 @@ zinit wait lucid for \
   OMZP::git \
   OMZP::kubectl \
   OMZP::poetry \
-  OMZP::pipenv \
   OMZP::python \
   OMZP::pip
 
