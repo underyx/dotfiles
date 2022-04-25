@@ -33,9 +33,13 @@
 
 [diff]
     compactionHeuristic = true
+    colorMoved = default
 
 [help]
     autocorrect = 5
+
+[merge]
+    conflictstyle = diff3
 
 [color]
 	ui = true
@@ -116,18 +120,38 @@
     sfuriud = !zsh -c 'git stash && git fu && git riud && git pop'
 
 [delta]
-    features = decorations
-    syntax-theme = ansi
     width = variable
+    navigate = true  # use n and N to move between diff sections
 
-[delta "interactive"]
     keep-plus-minus-markers = true
 
-[delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
-    hunk-header-style = file line-number syntax
+    # author: https://github.com/Kr1ss-XD
+    commit-decoration-style = 232 130 box
+    commit-style = 232 bold italic 130
+    dark = true
+    file-added-label = [+]
+    file-copied-label = [C]
+    file-decoration-style = "#606018" overline
+    file-modified-label = [M]
+    file-removed-label = [-]
+    file-renamed-label = [R]
+    file-style = 232 bold 184
+    hunk-header-decoration-style = none
+    hunk-header-style = syntax bold italic 237
+    line-numbers = true
+    line-numbers-left-format = "{nm:>1}┊"
+    line-numbers-left-style = red
+    line-numbers-minus-style = red italic black
+    line-numbers-plus-style = green italic black
+    line-numbers-right-format = "{np:>1}┊"
+    line-numbers-right-style = green
+    line-numbers-zero-style = "#545474" italic
+    minus-emph-style = syntax bold "#780000"
+    minus-style = syntax "#400000"
+    plus-emph-style = syntax bold "#007800"
+    plus-style = syntax "#004000"
+    syntax-theme = Vibrant Sunburst
+    whitespace-error-style = "#280050" reverse
+    zero-style = syntax
+    blame-format = "{author:<18} ({commit:>7}) ┊{timestamp:^16}┊ "
+    blame-palette = "#101010 #200020 #002800 #000028 #202000 #280000 #002020 #002800 #202020"
