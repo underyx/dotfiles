@@ -5,6 +5,7 @@ export GOPATH="$HOME/go"
 export PATH="./node_modules/.bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:/usr/local/sbin:$PATH"
 export CPATH="$CPATH:$(brew --prefix)/include"
 export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
+export PIPENV_VENV_IN_PROJECT=true
 
 if [[ `uname -m` == 'arm64' ]]; then
   export SKIP=semgrep
