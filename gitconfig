@@ -50,6 +50,10 @@
 [include]
     path = .gitconfig.prefer-ssh
 
+[submodule]
+    recurse = true
+    fetchJobs = 20
+
 [alias]
     amend = commit --amend --no-edit
     force = push --force-with-lease
