@@ -1,3 +1,5 @@
+format = "$all$character$status"
+
 [aws]
 disabled = true
 
@@ -15,3 +17,7 @@ disabled = false
 
 [status]
 disabled = false
+
+[character]
+success_symbol = "\\(/^ヮ^\\)/*:・ﾟ✧"
+error_symbol = "\\(✿⊙︿⊙\\)つ"
