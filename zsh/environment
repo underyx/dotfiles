@@ -1,4 +1,4 @@
-export LC_ALL=en_US.UTF-8
+qexport LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GOPATH="$HOME/go"
@@ -6,10 +6,6 @@ export PATH="./node_modules/.bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$GO
 export CPATH="$CPATH:$(brew --prefix)/include"
 export LIBRARY_PATH="$LIBRARY_PATH:$(brew --prefix)/lib"
 export PIPENV_VENV_IN_PROJECT=true
-
-if [[ `uname -m` == 'arm64' ]]; then
-  export SKIP=semgrep
-fi
 
 if exists vim; then
   export EDITOR=$(command -v vim)
