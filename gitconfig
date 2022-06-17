@@ -52,7 +52,7 @@
 
 [submodule]
     recurse = true
-    fetchJobs = 20
+	fetchJobs = 50
 
 [alias]
     amend = commit --amend --no-edit
