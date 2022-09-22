@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-git checkout main
-git am -3 "$(git browse -u)/pull/$1"
