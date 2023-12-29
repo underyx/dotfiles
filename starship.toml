@@ -17,6 +17,9 @@ disabled = false
 
 [status]
 disabled = false
+map_symbol = true
+pipestatus = true
+symbol = "✖️ "
 
 [character]
 success_symbol = "\\(/^ヮ^\\)/*:・ﾟ✧"

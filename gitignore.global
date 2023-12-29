@@ -9,5 +9,4 @@ env/
 .ipynb_checkpoints/
 .ansible-vault-password
 .python-version
-.vscode/
 **/.idea/

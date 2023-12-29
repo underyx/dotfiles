@@ -40,6 +40,10 @@
 
 [merge]
     conflictstyle = diff3
+    tool = code
+
+[mergetool "code"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 [color]
 	ui = true
@@ -88,12 +92,12 @@
     s = status
     sh = show
     r = rebase
-    rom = rebase origin/master
-    rum = rebase upstream/master
+    rom = rebase origin/main
+    rum = rebase upstream/main
     rod = rebase origin/develop
     rud = rebase upstream/develop
-    riom = rebase --interactive origin/master
-    rium = rebase --interactive upstream/master
+    riom = rebase --interactive origin/main
+    rium = rebase --interactive upstream/main
     riod = rebase --interactive origin/develop
     riud = rebase --interactive upstream/develop
     rh = reset HEAD
@@ -122,6 +126,7 @@
     sfurium = !zsh -c 'git stash && git fu && git rium && git pop'
     sforiod = !zsh -c 'git stash && git fo && git riod && git pop'
     sfuriud = !zsh -c 'git stash && git fu && git riud && git pop'
+	set-upstream = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
 
 [delta]
     width = variable
