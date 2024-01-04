@@ -10,10 +10,6 @@
     - mkdir -p ~/bin
     - mkdir -p ~/.config
 
-# ssh
-- shell:
-    - mkdir -p ~/.ssh
-
 # zsh
 - shell:
     - mkdir -p ~/.zinit
@@ -51,7 +47,7 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitconfig.prefer-ssh:
-      if: "[[ -d ~/.ssh ]]"
+      if: "ssh git@github.com 2>&1 | grep -q 'successfully authenticated'"
       path: gitconfig.prefer-ssh
     ~/.gitignore.global: gitignore.global
     ~/bin/git-review-pr: bin/git-review-pr
