@@ -47,7 +47,7 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitconfig.prefer-ssh:
-      if: "ssh git@github.com 2>&1 | grep -q 'successfully authenticated'"
+      if: "ssh git@github.com -o'StrictHostKeyChecking=accept-new' 2>&1 | grep -q 'successfully authenticated'"
       path: gitconfig.prefer-ssh
     ~/.gitignore.global: gitignore.global
     ~/bin/git-review-pr: bin/git-review-pr
