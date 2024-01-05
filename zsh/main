@@ -16,14 +16,17 @@ zinit load direnv/direnv
 
 zinit wait lucid for agkozak/zsh-z
 
-zinit wait lucid as'completion' for OMZ::plugins/docker/_docker
+zinit wait lucid as'completion' for \
+  OMZ::plugins/docker/completions/_docker \
+  OMZ::plugins/fd/_fd
 zinit wait lucid for \
   OMZP::docker-compose \
   OMZP::git \
   OMZP::kubectl \
   OMZP::poetry \
   OMZP::python \
-  OMZP::pip
+  OMZP::pip \
+  OMZP::yarn
 
 zinit ice wait lucid from'gh-r' as'program' pick'delta*/delta'
 zinit load dandavison/delta
