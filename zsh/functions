@@ -26,3 +26,13 @@ up() {
   which softwareupdate > /dev/null && softwareupdate -d
   which npm > /dev/null && npx npm-check -g -u
 }
+
+ksecrets() {
+  if [[ -z $1 ]]; then
+    echo "Usage: ksecrets <secret>"
+    return 2
+  fi
+
+  SECRET_NAME=$1
+  kubectl get secret $SECRET_NAME -o json | jq -r '.data | to_entries[] | "\(.key): \(.value | @base64d)"'
+}

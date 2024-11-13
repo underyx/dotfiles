@@ -4,6 +4,8 @@ export LANG=en_US.UTF-8
 export GOPATH="$HOME/go"
 export PATH="./node_modules/.bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:/usr/local/sbin:$PATH"
 export PIPENV_VENV_IN_PROJECT=true
+export SKIP="semgrep"
+export AWS_PROFILE="engineer"
 
 if exists brew; then
   export CPATH="$CPATH:$(brew --prefix)/include"
