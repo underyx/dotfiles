@@ -15,3 +15,5 @@ export SAVEHIST=100000
 export HIST_IGNORE_SPACE=1
 
 export ZSH_CACHE_DIR=$ZSHHOME/.cache
+
+export ZSHZ_UNCOMMON=1

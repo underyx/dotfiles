@@ -2,7 +2,7 @@
     excludesfile = ~/.gitignore.global
     whitespace = space-before-tab,trailing-space
 	pager = delta
-	editor = vim
+	editor = nvim
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
@@ -10,7 +10,6 @@
 [user]
     name = Bence Nagy
     email = nagy@bence.dev
-    signingkey = 88D12683EFF2E23E
 
 [init]
 	defaultBranch = main

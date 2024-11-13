@@ -3,7 +3,6 @@ export LANG=en_US.UTF-8
 
 export GOPATH="$HOME/go"
 export PATH="./node_modules/.bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:/usr/local/sbin:$PATH"
-export PIPENV_VENV_IN_PROJECT=true
 export SKIP="semgrep"
 export AWS_PROFILE="engineer"
 
@@ -16,8 +15,8 @@ if exists vim; then
   export EDITOR=$(command -v vim)
 fi
 
-if exists gpg; then
-  export GPG_TTY=$(tty)
+if exists nvim; then
+  export EDITOR=$(command -v nvim)
 fi
 
 export VISUAL="$EDITOR"

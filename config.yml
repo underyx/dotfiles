@@ -51,12 +51,6 @@
       path: gitconfig.prefer-ssh
     ~/.gitignore.global: gitignore.global
     ~/bin/git-review-pr: bin/git-review-pr
-    ~/.gnupg/gpg.conf:
-      if: "[ `uname` = Darwin ]"
-      path: gnupg/gpg.conf
-    ~/.gnupg/gpg-agent.conf:
-      if: "[ `uname` = Darwin ]"
-      path: gnupg/gpg-agent.conf
 
 # starship
 - link:
