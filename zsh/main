@@ -14,14 +14,12 @@ zinit load direnv/direnv
 zinit wait lucid for agkozak/zsh-z
 
 zinit wait lucid as'completion' for \
-  OMZ::plugins/docker/completions/_docker \
-  OMZ::plugins/fd/_fd
+  OMZ::plugins/docker/completions/_docker
 zinit wait lucid for \
   OMZP::docker-compose \
   OMZP::git \
   OMZP::kubectl \
   OMZP::poetry \
-  OMZP::python \
   OMZP::pip \
   OMZP::yarn
 
