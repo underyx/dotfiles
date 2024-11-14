@@ -19,7 +19,6 @@ zinit wait lucid for \
   OMZP::docker-compose \
   OMZP::git \
   OMZP::kubectl \
-  OMZP::poetry \
   OMZP::pip \
   OMZP::yarn
 
