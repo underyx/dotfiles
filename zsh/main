@@ -48,3 +48,7 @@ zinit ice wait'!' silent from'gh-r' as'program' \
   atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
   src='./init.zsh' bpick'*-aarch64-apple-darwin.tar.gz'
 zinit load starship/starship
+
+# specifying term to fix ghostty incompatibilities
+export TERM=xterm-256color
+
