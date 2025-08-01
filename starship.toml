@@ -3,12 +3,6 @@ format = "$all$character$status"
 [aws]
 disabled = true
 
-[env_var]
-variable = "AWS_ACCESS_KEY_ID"
-symbol = "🔓"
-style = "red bold"
-format = "$symbol [with AWS_ACCESS_KEY_ID set]($style)"
-
 [gcloud]
 disabled = true
 
@@ -20,6 +14,24 @@ disabled = false
 map_symbol = true
 pipestatus = true
 symbol = "✖️ "
+
+[docker_context]
+disabled = true
+
+[package]
+disabled = true
+
+[buf]
+disabled = true
+
+[kubernetes]
+format = '[$symbol]($style)'
+disabled = false
+symbol = ""
+contexts = [
+  { context_pattern = ".*prod.*", style = "bold red", symbol = "PROD ◯◯◯ " },
+  { context_pattern = ".*338683922796.*", style = "green", symbol = "◯◯◯ " },
+]
 
 [character]
 success_symbol = "\\(/^ヮ^\\)/*:・ﾟ✧"
