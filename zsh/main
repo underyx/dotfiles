@@ -1,15 +1,10 @@
 source $HOME/.zinit/bin/zinit.zsh
+source ~/.zsh/starship-init
 
 zinit snippet $ZSHHOME/zsh-settings
 zinit snippet $ZSHHOME/functions
 zinit snippet $ZSHHOME/environment
 zinit snippet $ZSHHOME/aliases
-
-zinit ice \
-  wait lucid from'gh-r' as'program' mv'direnv* -> direnv' \
-  atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
-  pick'direnv' src='zhook.zsh'
-zinit load direnv/direnv
 
 zinit wait lucid for agkozak/zsh-z
 
@@ -22,14 +17,29 @@ zinit wait lucid for \
   OMZP::pip \
   OMZP::yarn
 
-zinit ice wait lucid from'gh-r' as'program' pick'delta*/delta'
-zinit load dandavison/delta
+if [[ "$UNDERYX_DOTFILES_SKIP_BINARY_INSTALLS" != "1" ]]; then
+   zinit ice \
+      wait lucid from'gh-r' as'program' mv'direnv* -> direnv' \
+      atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' \
+      pick'direnv' src='zhook.zsh'
+   zinit load direnv/direnv
 
-zinit ice wait lucid from'gh-r' as'program' pick'ripgrep*/rg'
-zinit load BurntSushi/ripgrep
+   zinit ice wait lucid from'gh-r' as'program' pick'delta*/delta'
+   zinit load dandavison/delta
 
-zinit ice wait lucid from'gh-r' as'program' pick'fd*/fd'
-zinit load sharkdp/fd
+   zinit ice wait lucid from'gh-r' as'program' pick'ripgrep*/rg'
+   zinit load BurntSushi/ripgrep
+
+   zinit ice wait lucid from'gh-r' as'program' pick'fd*/fd'
+   zinit load sharkdp/fd
+
+   zinit ice wait'!' silent from'gh-r' as'program' \
+      atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
+      src='./init.zsh'
+   [[ $(uname) == "Darwin" ]] && zinit ice wait'!' silent from'gh-r' as'program' \
+      atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
+      src='./init.zsh' bpick'*-aarch64-apple-darwin.tar.gz'
+   zinit
 
 # from https://github.com/zdharma-continuum/fast-syntax-highlighting/tree/a62d721affc771de2c78201d868d80668a84c1e1#zinit
 # needs to be the last one loaded
@@ -40,15 +50,3 @@ zinit wait lucid for \
     zsh-users/zsh-completions \
  atload'!_zsh_autosuggest_start' \
     zsh-users/zsh-autosuggestions
-
-zinit ice wait'!' silent from'gh-r' as'program' \
-  atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
-  src='./init.zsh'
-[[ $(uname) == "Darwin" ]] && zinit ice wait'!' silent from'gh-r' as'program' \
-  atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
-  src='./init.zsh' bpick'*-aarch64-apple-darwin.tar.gz'
-zinit load starship/starship
-
-# specifying term to fix ghostty incompatibilities
-export TERM=xterm-256color
-

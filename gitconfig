@@ -1,3 +1,7 @@
+[include]
+    path = .gitconfig.prefer-ssh
+    path = .gitconfig.gpg
+
 [core]
     excludesfile = ~/.gitignore.global
     whitespace = space-before-tab,trailing-space
@@ -21,8 +25,8 @@
 [push]
     default = current
 
-[commit]
-	gpgsign = false
+[fetch]
+	prune = true
 
 [rebase]
     autosquash = true
@@ -46,12 +50,6 @@
 
 [color]
 	ui = true
-
-[gpg]
-	program = gpg
-
-[include]
-    path = .gitconfig.prefer-ssh
 
 [submodule]
     recurse = true
@@ -91,14 +89,14 @@
     s = status
     sh = show
     r = rebase
-    rom = rebase origin/main
-    rum = rebase upstream/main
-    rod = rebase origin/develop
-    rud = rebase upstream/develop
-    riom = rebase --interactive origin/main
-    rium = rebase --interactive upstream/main
-    riod = rebase --interactive origin/develop
-    riud = rebase --interactive upstream/develop
+    rom = rebase origin/master
+    rum = rebase upstream/master
+    ros = rebase origin/staging
+    rus = rebase upstream/staging
+    riom = rebase --interactive origin/master
+    rium = rebase --interactive upstream/master
+    rios = rebase --interactive origin/staging
+    rius = rebase --interactive upstream/staging
     rh = reset HEAD
     ri = rebase --interactive
     ra = rebase --abort
@@ -111,20 +109,20 @@
     aaf = !zsh -c 'git aa && git amend && git force'
     forom = !zsh -c 'git fo && git rom'
     furum = !zsh -c 'git fu && git rum'
-    forod = !zsh -c 'git fo && git rod'
-    furud = !zsh -c 'git fu && git rud'
+    foros = !zsh -c 'git fo && git ros'
+    furus = !zsh -c 'git fu && git rus'
     foriom = !zsh -c 'git fo && git riom'
     furium = !zsh -c 'git fu && git rium'
-    foriod = !zsh -c 'git fo && git riod'
-    furiud = !zsh -c 'git fu && git riud'
+    forios = !zsh -c 'git fo && git rios'
+    furius = !zsh -c 'git fu && git rius'
     sforom = !zsh -c 'git stash && git fo && git rom && git pop'
     sfurum = !zsh -c 'git stash && git fu && git rum && git pop'
-    sforod = !zsh -c 'git stash && git fo && git rod && git pop'
-    sfurud = !zsh -c 'git stash && git fu && git rud && git pop'
+    sforos = !zsh -c 'git stash && git fo && git ros && git pop'
+    sfurus = !zsh -c 'git stash && git fu && git rus && git pop'
     sforiom = !zsh -c 'git stash && git fo && git riom && git pop'
     sfurium = !zsh -c 'git stash && git fu && git rium && git pop'
-    sforiod = !zsh -c 'git stash && git fo && git riod && git pop'
-    sfuriud = !zsh -c 'git stash && git fu && git riud && git pop'
+    sforios = !zsh -c 'git stash && git fo && git rios && git pop'
+    sfurius = !zsh -c 'git stash && git fu && git rius && git pop'
 	set-upstream = !git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)
 
 [delta]
@@ -132,6 +130,9 @@
     navigate = true  # use n and N to move between diff sections
 
     keep-plus-minus-markers = true
+
+[include]
+    path = PATH/TO/delta/themes.gitconfig
 
     # author: https://github.com/Kr1ss-XD
     commit-decoration-style = 232 130 box
@@ -158,7 +159,7 @@
     minus-style = syntax "#400000"
     plus-emph-style = syntax bold "#007800"
     plus-style = syntax "#004000"
-    syntax-theme = Vibrant Sunburst
+    syntax-theme = base16
     whitespace-error-style = "#280050" reverse
     zero-style = syntax
     blame-format = "{author:<18} ({commit:>7}) ┊{timestamp:^16}┊ "

@@ -45,12 +45,16 @@
     - chmod 0700 ~/.gnupg
 
 - link:
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig.dotfiles: gitconfig
     ~/.gitconfig.prefer-ssh:
       if: "ssh git@github.com -o'StrictHostKeyChecking=accept-new' 2>&1 | grep -q 'successfully authenticated'"
       path: gitconfig.prefer-ssh
     ~/.gitignore.global: gitignore.global
     ~/bin/git-review-pr: bin/git-review-pr
+
+- shell:
+    - echo "[include]" >> ~/.gitconfig
+    - echo "  path = .gitconfig.dotfiles" >> ~/.gitconfig
 
 # starship
 - link:
