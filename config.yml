@@ -53,8 +53,12 @@
     ~/bin/git-review-pr: bin/git-review-pr
 
 - shell:
-    - echo "[include]" >> ~/.gitconfig
-    - echo "  path = .gitconfig.dotfiles" >> ~/.gitconfig
+    - |
+        if ! grep -q "gitconfig.dotfiles" ~/.gitconfig 2>/dev/null; then
+        echo "[include]" >> ~/.gitconfig
+        echo "  path = .gitconfig.dotfiles" >> ~/.gitconfig
+        fi
+
 
 # starship
 - link:

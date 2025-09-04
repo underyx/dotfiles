@@ -131,9 +131,6 @@
 
     keep-plus-minus-markers = true
 
-[include]
-    path = PATH/TO/delta/themes.gitconfig
-
     # author: https://github.com/Kr1ss-XD
     commit-decoration-style = 232 130 box
     commit-style = 232 bold italic 130
