@@ -1,5 +1,4 @@
 source $HOME/.zinit/bin/zinit.zsh
-source ~/.zsh/starship-init
 
 zinit snippet $ZSHHOME/zsh-settings
 zinit snippet $ZSHHOME/functions
@@ -39,7 +38,8 @@ if [[ "$UNDERYX_DOTFILES_SKIP_BINARY_INSTALLS" != "1" ]]; then
    [[ $(uname) == "Darwin" ]] && zinit ice wait'!' silent from'gh-r' as'program' \
       atclone'./starship init zsh --print-full-init > init.zsh' atpull'%atclone' \
       src='./init.zsh' bpick'*-aarch64-apple-darwin.tar.gz'
-   zinit
+   zinit load starship/starship
+fi
 
 # from https://github.com/zdharma-continuum/fast-syntax-highlighting/tree/a62d721affc771de2c78201d868d80668a84c1e1#zinit
 # needs to be the last one loaded
