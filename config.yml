@@ -15,9 +15,9 @@
     - mkdir -p ~/.zinit
 
 - link:
-    ~/.zshrc:
-      path: zshrc
-      force: yes
+    # ~/.zshrc:
+    #   path: zshrc
+    #   force: yes
     ~/.zsh: zsh
     ~/.zinit/bin: zinit
 
